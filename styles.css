@@ -1,0 +1,25 @@
+.container{
+	max-width: 500px;
+	margin: 20px auto;
+	text-align: center;
+}
+.container h2{
+	text-align: center;
+}
+.workTime, .breakTime{
+	font-size: 2rem;
+}
+.minSecGrp{
+	display: inline-block;
+	text-align: center;
+}
+.incDecBtn{
+	display: block;
+}
+#start{
+	margin-top: 20px;
+}
+.sessDisplay{
+	font-size: 2rem;
+	/*text-align: center;*/
+}

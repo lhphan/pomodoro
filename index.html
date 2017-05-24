@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pomodoro Clock</title>
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+</head>
+<body>
+	<div class="container">
+		<audio src="bell.wav" id="alarm" type="audio/wav"></audio>
+		<!-- SETTINGS -->
+		<div class="settings">
+			<h2>Work Session</h2>
+			<div class="workTime">
+				<div class="minSecGrp">
+					<button id="workMinInc" class="incDecBtn">+</button>
+					<span class="wMins">25</span>:
+					<button id="workMinDec" class="incDecBtn">-</button>
+				</div>
+				<div class="minSecGrp">
+					<button id="workSecInc" class="incDecBtn">+</button>
+					<span class="wSecs">00</span>
+					<button id="workSecDec" class="incDecBtn">-</button>
+				</div>
+			</div>
+			<h2>Break Session</h2>
+			<div class="breakTime">
+				<div class="minSecGrp">
+					<button id="breakMinInc" class="incDecBtn">+</button>
+					<span class="bMins">05</span>:
+					<button id="breakMinDec" class="incDecBtn">-</button>
+				</div>
+				<div class="minSecGrp">
+					<button id="breakSecInc" class="incDecBtn">+</button>
+					<span class="bSecs">00</span>
+					<button id="breakSecDec" class="incDecBtn">-</button>
+				</div>
+			</div>
+			<button id="start">Start</button>
+		</div>
+		<!-- DISPLAY -->
+		<div class="display">
+			<h2 class="sessTitle"></h2>
+			<div class="sessDisplay"><span class="minDisplay">00</span>:<span class="secDisplay">00</span></div>
+			<button id="reset">Reset</button>
+		</div>
+	</div>
+</body>
+</html>
