@@ -12,6 +12,16 @@ $(document).ready(function(){
 			$(htmlElem).text(quantity);
 		}
 	}
+	$("#demo").click(function(){
+		workMinsInput = 0;
+		workSecsInput = 30;
+		breakMinsInput = 0;
+		breakSecsInput = 15;
+		$(".wMins").text("00");
+		$(".wSecs").text("30");
+		$(".bMins").text("00");
+		$(".bSecs").text("15");
+	});
 	$("#workMinDec").click(function(){
 		if(workMinsInput > 0){
 			workMinsInput -= 1;
