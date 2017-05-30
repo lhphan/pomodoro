@@ -4,39 +4,49 @@
 	<meta charset="UTF-8">
 	<title>Pomodoro Clock</title>
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
+	<!-- https://material.io/icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="scripts.js"></script>
 </head>
 <body>
 	<div class="container">
 		<audio src="bell.wav" id="alarm" type="audio/wav"></audio>
+		<h1>Pomodoro Clock</h1>
 		<!-- SETTINGS -->
-		<div class="settings">
-			<h2>Work Session</h2>
+		<div class="settings">	
 			<div class="workTime">
+				<h2>Work Session</h2>
 				<div class="minSecGrp">
-					<button id="workMinInc" class="incDecBtn">+</button>
-					<span class="wMins">25</span>:
-					<button id="workMinDec" class="incDecBtn">-</button>
+					<button id="workMinInc" aria-label="Increase work minutes" class="incDecBtn minBtn">
+					<i class="material-icons">keyboard_arrow_up</i></button>
+					<span class="wMins">25</span> :
+					<button id="workMinDec" aria-label="Decrease work minutes" class="incDecBtn minBtn">
+					<i class="material-icons">keyboard_arrow_down</i></button>
 				</div>
 				<div class="minSecGrp">
-					<button id="workSecInc" class="incDecBtn">+</button>
+					<button id="workSecInc" aria-label="Increase work seconds" class="incDecBtn">
+					<i class="material-icons">keyboard_arrow_up</i></button>
 					<span class="wSecs">00</span>
-					<button id="workSecDec" class="incDecBtn">-</button>
+					<button id="workSecDec" aria-label="Decrease work seconds" class="incDecBtn">
+					<i class="material-icons">keyboard_arrow_down</i></button>
 				</div>
 			</div>
-			<h2>Break Session</h2>
 			<div class="breakTime">
+				<h2>Break Session</h2>
 				<div class="minSecGrp">
-					<button id="breakMinInc" class="incDecBtn">+</button>
-					<span class="bMins">05</span>:
-					<button id="breakMinDec" class="incDecBtn">-</button>
+					<button id="breakMinInc" aria-label="Increase break minutes" class="incDecBtn minBtn">
+					<i class="material-icons">keyboard_arrow_up</i></button>
+					<span class="bMins">05</span> :
+					<button id="breakMinDec" aria-label="Decrease break minutes" class="incDecBtn minBtn">
+					<i class="material-icons">keyboard_arrow_down</i></button>
 				</div>
 				<div class="minSecGrp">
-					<button id="breakSecInc" class="incDecBtn">+</button>
+					<button id="breakSecInc" aria-label="Increase break seconds" class="incDecBtn">
+					<i class="material-icons">keyboard_arrow_up</i></button>
 					<span class="bSecs">00</span>
-					<button id="breakSecDec" class="incDecBtn">-</button>
+					<button id="breakSecDec" aria-label="Decrease break seconds" class="incDecBtn">
+					<i class="material-icons">keyboard_arrow_down</i></button>
 				</div>
 			</div>
 			<button id="demo">Use demo settings</button> 
@@ -44,10 +54,16 @@
 		</div>
 		<!-- DISPLAY -->
 		<div class="display">
-			<h2 class="sessTitle"></h2>
-			<div class="sessDisplay"><span class="minDisplay">00</span>:<span class="secDisplay">00</span></div>
+			<div class="sessDisplay">
+				<h2 class="sessTitle"></h2>
+				<span class="minDisplay">00</span>:<span class="secDisplay">00</span>
+			</div>
 			<button id="reset">Reset</button>
 		</div>
 	</div>
+
+	<!-- The JS Stuff -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
 </body>
 </html>

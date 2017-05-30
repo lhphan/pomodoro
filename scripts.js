@@ -5,22 +5,24 @@ $(document).ready(function(){
 	var workSecsInput = parseInt( $(".wSecs").html() );
 	var breakMinsInput = parseInt( $(".bMins").html() );
 	var breakSecsInput = parseInt( $(".bSecs").html() );
+
 	function inputLessThan10(htmlElem, quantity){
 		if(quantity < 10){
-			$(htmlElem).text("0" + quantity);
+			$(htmlElem).html("0" + quantity);
 		}else{
-			$(htmlElem).text(quantity);
+			$(htmlElem).html(quantity);
 		}
 	}
+
 	$("#demo").click(function(){
 		workMinsInput = 0;
 		workSecsInput = 30;
 		breakMinsInput = 0;
 		breakSecsInput = 15;
-		$(".wMins").text("00");
-		$(".wSecs").text("30");
-		$(".bMins").text("00");
-		$(".bSecs").text("15");
+		$(".wMins").html("00");
+		$(".wSecs").html("30");
+		$(".bMins").html("00");
+		$(".bSecs").html("15");
 	});
 	$("#workMinDec").click(function(){
 		if(workMinsInput > 0){
@@ -80,20 +82,20 @@ $(document).ready(function(){
 		var breakSecs = (breakMinsInput * 60) + breakSecsInput + 1;
 		function displayLessThan10(sessionType){ 
 			if(Math.floor(sessionType/60) < 10){
-				$(".minDisplay").text("0" + Math.floor(sessionType/60));
+				$(".minDisplay").html("0" + Math.floor(sessionType/60));
 			}else{
-				$(".minDisplay").text(Math.floor(sessionType/60));
+				$(".minDisplay").html(Math.floor(sessionType/60));
 			}
 			if(Math.floor(sessionType%60) < 10){
-				$(".secDisplay").text("0" + Math.floor(sessionType%60));
+				$(".secDisplay").html("0" + Math.floor(sessionType%60));
 			}else{
-				$(".secDisplay").text(Math.floor(sessionType%60));
+				$(".secDisplay").html(Math.floor(sessionType%60));
 			}
 		}
 		workInterval = setInterval(workCountdown, 1000);
+		$(".sessTitle").html("Work Session");
 		$(".display").show();
-		function workCountdown(){	
-			$(".sessTitle").html("Work Session");
+		function workCountdown(){		
 			workSecs -= 1;
 			if(workSecs === 0){
 				sound.play();
@@ -117,6 +119,8 @@ $(document).ready(function(){
 
 	$("#reset").click(function(){
 		$(".display").hide();
+		$(".minDisplay").html("00");
+		$(".secDisplay").html("00");
 		clearInterval(breakInterval);
 		clearInterval(workInterval);
 		$(".sessTitle").html("Work Session");
